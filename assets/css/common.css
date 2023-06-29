@@ -1,0 +1,72 @@
+.blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+}
+
+.fp-watermark{
+    display: none;
+}
+
+
+/* 버튼 호버 애니메이션 */
+.more-btn{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 55px;
+    border: 1px solid #404040;
+    font-family: "Lexend";
+    font-size: 12px;
+    color: #fff;
+}
+.more-btn::before{
+    display: block;
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-left: 1px solid #fff;
+    border-top: 1px solid #fff;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    transform-origin: left top;
+    transform: scale(0);
+}
+.more-btn::after{
+    display: block;
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    position: absolute;
+    right: -1px;
+    bottom: -1px;
+    transform-origin: right bottom;
+    transform: scale(0);
+}
+.more-btn:hover:before, .more-btn:hover:after {
+    animation: more 0.6s infinite alternate;
+}
+@keyframes more{
+	0%{transform:scale(0);}
+	100%{transform:scale(1);}
+}
+
+
+/* top 버튼 */
+.btn-top{
+    position: fixed;
+    right: 1%;
+    z-index: 100;
+    bottom: 200px;
+    width: 28px;
+    background: rgba(28,193,221,0.7);
+    border-radius: 14px;
+}
